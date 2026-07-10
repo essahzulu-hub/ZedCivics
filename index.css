@@ -1306,3 +1306,57 @@ textarea.form-control { resize: vertical; min-height: 120px; }
   .hero-cta { flex-direction: column; align-items: center; }
   .hero-cta .btn { width: 100%; max-width: 280px; }
 }
+
+/* Extra small phones (very narrow devices) */
+@media (max-width: 420px) {
+  .container { padding: 0 1rem; }
+
+  /* Reduce hero crowding */
+  .hero { height: 520px; }
+  .hero-content h1 { font-size: 1.65rem; }
+  .hero-description { font-size: 1rem; }
+
+  .about-hero,
+  .branches-intro,
+  .events-intro,
+  .contact-intro { height: 240px; }
+  .about-hero h1,
+  .branches-intro h1,
+  .events-intro h1,
+  .contact-intro h1 { font-size: 1.6rem; }
+
+  /* Tighter cards */
+  .overview-card { padding: 1.8rem; }
+  .championship-info h2 { font-size: 1.7rem; }
+
+  /* Keep buttons comfortably tappable */
+  .btn { padding: 0.7rem 1.4rem; }
+}
+
+@media (max-width: 360px) {
+  .container { padding: 0 0.9rem; }
+
+  .site-logo-centered img { height: 54px; }
+  .site-logo-title { font-size: 1rem; }
+
+  .hero { height: 490px; }
+  .hero-content h1 { font-size: 1.5rem; }
+  .hero-description { font-size: 0.95rem; }
+
+  .about-hero,
+  .branches-intro,
+  .events-intro,
+  .contact-intro { height: 220px; }
+  .about-hero h1,
+  .branches-intro h1,
+  .events-intro h1,
+  .contact-intro h1 { font-size: 1.4rem; }
+
+  /* Remove any chance of horizontal overflow from large media */
+  video, img, iframe { max-width: 100%; overflow: hidden; }
+
+  /* Avoid oversize headings/buttons pushing layouts */
+  h1, h2, h3 { overflow-wrap: anywhere; }
+}
+
+
