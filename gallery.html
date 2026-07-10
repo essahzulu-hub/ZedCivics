@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | Zambia Tong-Il Moo-Do Federation</title>
+  <meta name="description" content="Gallery of Tong-Il Moo-Do activities across Zambia: training sessions, seminars, and national events.">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="icon" href="assets/new logo.jpeg" type="image/jpeg">
+  <style>
+    .gallery-section{padding:5rem 0 7rem 0;background-color:var(--bg-secondary);border-top:1px solid var(--border-subtle)}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .gallery-item{border-radius:4px;overflow:hidden;border:1px solid rgba(0,0,0,0.08);box-shadow:var(--shadow-sm);background:#fff;min-height:220px}
+    .gallery-item img{width:100%;height:240px;object-fit:cover;display:block}
+    .gallery-item video{width:100%;height:420px;object-fit:cover;display:block}
+
+    .gallery-caption{padding:1rem 1.1rem;color:var(--text-muted);font-size:.92rem}
+
+
+    @media (max-width:1024px){.gallery-grid{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:768px){.gallery-grid{grid-template-columns:1fr}.gallery-item img{height:260px}}
+  </style>
+</head>
+<body>
+
+  <!-- ===== SITE HEADER — Centered Logo ===== -->
+  <div class="site-header-top">
+    <a href="index.html" class="site-logo-centered">
+      <img src="assets/new logo.jpeg" alt="ZMTIMDF Logo">
+      <span class="site-logo-title">Zambia Tong-Il Moo-Do Federation</span>
+      <span class="site-logo-sub">Affiliated to the World Tong-Il Moo-Do Federation</span>
+      <span class="site-logo-sub">Gallery</span>
+    </a>
+  </div>
+
+  <!-- ===== PRIMARY NAV BAR ===== -->
+  <header class="header-nav">
+    <div class="container nav-container">
+      <nav class="nav-menu" id="navMenu">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About ZMTIMDF</a>
+        <a href="branches.html" class="nav-link">Branches &amp; Dojos</a>
+        <a href="events.html" class="nav-link">Events Calendar</a>
+        <a href="gallery.html" class="nav-link active">Gallery</a>
+        <a href="contact.html" class="nav-link">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <section class="gallery-section">
+    <div class="container">
+      <div class="section-header" style="margin-bottom:3rem;">
+        <span class="badge">Gallery</span>
+        <h2>Training &amp; Community Moments</h2>
+        <p>Highlights from recent Tong-Il Moo-Do activities in Zambia.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item gallery-video-item">
+          <video
+            src="assets/vids/video gallery.mp4"
+            autoplay
+            muted
+            loop
+            playsinline
+            preload="auto"
+            aria-label="ZMTIMDF gallery video">
+          </video>
+          <div class="gallery-caption">Zambia Training Moments (Video)</div>
+        </div>
+
+        <div class="gallery-item">
+          <img src="assets/gallery1.jpeg" alt="Tong-Il Moo-Do training session">
+          <div class="gallery-caption">Training Session</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery2.jpeg" alt="Students practicing techniques">
+          <div class="gallery-caption">Technique Practice</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/gallery3.jpeg" alt="Students at an event">
+          <div class="gallery-caption">Federation Events</div>
+        </div>
+        <div class="gallery-item">
+          <img src="assets/upcoming event1.jpeg" alt="Upcoming championships and seminars">
+          <div class="gallery-caption">Upcoming Programs</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <div class="footer-info-logo">
+          <img src="assets/new logo.jpeg" alt="ZMTIMDF Logo">
+          <span>ZMTIMDF</span>
+        </div>
+        <p>The official governing body for Tong-Il Moo-Do martial arts in Zambia, affiliated to the World Tong-Il Moo-Do Federation.</p>
+        <div class="footer-socials">
+          <a href="https://www.facebook.com/zmtimdf?mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="branches.html">Dojos &amp; Branches</a></li>
+          <li><a href="events.html">Events &amp; Seminars</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Affiliation</h4>
+        <ul>
+          <li><a href="branches.html">Join a Dojo</a></li>
+          <li><a href="branches.html">Instructor Accreditation</a></li>
+          <li><a href="about.html">Executive Committee</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact HQ</h4>
+        <ul class="footer-contact-list">
+          <li><i class="fa-solid fa-location-dot"></i><span>Lusaka Sports Development Complex,<br>P.O. Box 32011, Lusaka, Zambia</span></li>
+          <li><i class="fa-solid fa-phone"></i><span>+260 977 123456</span></li>
+          <li><i class="fa-solid fa-envelope"></i><span>info@tongilmoodozambia.org</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Zambia Tong-Il Moo-Do Federation. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
+
