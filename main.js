@@ -5,15 +5,20 @@ document.addEventListener('DOMContentLoaded', () => {
   nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('open'); menu?.setAttribute('aria-expanded', 'false'); }));
 
   const explainers = {
+    'what is democracy?': 'Democracy is a system where citizens have a say in how they are governed, including through free and fair elections. It means the power comes from the people.',
+    'what does an mp do?': 'An MP (Member of Parliament) represents the people in their constituency in the National Assembly. They make laws, listen to citizens\' concerns, and vote on important national decisions.',
+    'what does a councillor do?': 'A councillor represents a ward and helps make decisions about local services like roads, schools, and water. They are your voice in local government.',
+    'what is the constitution?': 'The Constitution is Zambia\'s highest law — the rulebook that guides how the country is governed. It outlines everyone\'s rights, duties, and how government should work.',
     'what is a constituency?': 'A constituency is an area that elects one Member of Parliament (MP) to represent its people in the National Assembly.',
-    'what is democracy?': 'Democracy is a system where citizens choose leaders and take part in public decisions, especially through voting.',
-    'how are laws made?': 'A proposed law, called a Bill, is debated and voted on in Parliament. If it completes the required constitutional steps, it can become law.',
-    'who is my councillor?': 'A councillor is an elected representative for your ward. They help make decisions about local services in your council area.',
-    'what is civic education?': 'Civic education teaches you about government, citizenship, rights, duties, and how to participate actively in society.',
+    'what is civic participation?': 'Civic participation means taking part in public life and decisions — you can vote, join community groups, attend meetings, or speak up about issues that matter.',
+    'what is civic education?': 'Civic education teaches you about government, citizenship, rights, duties, and how to participate actively in society. It prepares you to be an informed citizen.',
     'what is citizenship?': 'Citizenship is your legal relationship with Zambia. It gives you rights like education and healthcare, and duties to respect laws and others.',
-    'what are my rights?': 'Your rights include life, health care, education, freedom of movement, opinion, and equal protection under the law.',
-    'what is good governance?': 'Good governance means leaders make fair decisions openly, listen to citizens, follow the law, and use public resources responsibly.',
-    'when did zambia gain independence?': 'Zambia gained independence from Britain on October 24, 1964, ending colonial rule and celebrating as a free nation.',
+    'what is good governance?': 'Good governance means leaders make fair decisions openly, listen to citizens, follow the law, and use public resources responsibly. It\'s about transparency and accountability.',
+    'what are your civic rights?': 'Your rights include life, health care, education, freedom of movement, freedom of opinion, equal protection under the law, and the right to participate in government.',
+    'what does patriotism mean?': 'Patriotism means showing love and loyalty to your country. It\'s about supporting Zambia\'s values, caring for your community, and working for the nation\'s progress.',
+    'when did zambia gain independence?': 'Zambia gained independence from Britain on October 24, 1964, ending colonial rule. This day is now celebrated annually as Heroes Day.',
+    'how are laws made?': 'A proposed law, called a Bill, is debated and voted on in Parliament. If it completes the required constitutional steps and gets presidential approval, it becomes law.',
+    'who is my councillor?': 'A councillor is an elected representative for your ward. They help make decisions about local services and represent your interests in local government.',
     'what are zambias national symbols?': 'Zambia\'s symbols include the green and orange flag with an eagle, the coat of arms, the national anthem, and the African Fish Eagle.'
   };
   const input = document.querySelector('#explainer-search');
