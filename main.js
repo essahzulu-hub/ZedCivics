@@ -1,158 +1,47 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const menu = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.main-nav');
+  menu?.addEventListener('click', () => { const open = nav.classList.toggle('open'); menu.setAttribute('aria-expanded', open); });
+  nav?.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { nav.classList.remove('open'); menu?.setAttribute('aria-expanded', 'false'); }));
 
-  // --- Mobile Hamburger Menu ---
-  const hamburger = document.getElementById('hamburger');
-  const navMenu   = document.getElementById('navMenu');
-  const navLinks  = document.querySelectorAll('.nav-link');
+  const explainers = {
+    'what is a constituency?': 'A constituency is an area that elects one Member of Parliament (MP) to represent its people in the National Assembly.',
+    'what is democracy?': 'Democracy is a system where citizens choose leaders and take part in public decisions, especially through voting.',
+    'how are laws made?': 'A proposed law, called a Bill, is debated and voted on in Parliament. If it completes the required constitutional steps, it can become law.',
+    'who is my councillor?': 'A councillor is an elected representative for your ward. They help make decisions about local services in your council area.',
+    'what is civic education?': 'Civic education teaches you about government, citizenship, rights, duties, and how to participate actively in society.',
+    'what is citizenship?': 'Citizenship is your legal relationship with Zambia. It gives you rights like education and healthcare, and duties to respect laws and others.',
+    'what are my rights?': 'Your rights include life, health care, education, freedom of movement, opinion, and equal protection under the law.',
+    'what is good governance?': 'Good governance means leaders make fair decisions openly, listen to citizens, follow the law, and use public resources responsibly.',
+    'when did zambia gain independence?': 'Zambia gained independence from Britain on October 24, 1964, ending colonial rule and celebrating as a free nation.',
+    'what are zambias national symbols?': 'Zambia\'s symbols include the green and orange flag with an eagle, the coat of arms, the national anthem, and the African Fish Eagle.'
+  };
+  const input = document.querySelector('#explainer-search');
+  const result = document.querySelector('.search-result');
+  const lookup = () => { const query = input.value.trim().toLowerCase(); result.textContent = explainers[query] || (query ? 'Try one of the suggested questions below — more explainers are coming soon.' : ''); };
+  document.querySelector('.search-box button')?.addEventListener('click', lookup);
+  input?.addEventListener('keydown', e => { if (e.key === 'Enter') lookup(); });
+  document.querySelectorAll('.quick-searches button').forEach(button => button.addEventListener('click', () => { input.value = button.textContent; lookup(); }));
 
-  if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-      hamburger.classList.toggle('active');
-      navMenu.classList.toggle('active');
-
-      const lines = hamburger.querySelectorAll('span');
-      if (hamburger.classList.contains('active')) {
-        lines[0].style.transform = 'rotate(-45deg) translate(-5px, 6px)';
-        lines[1].style.opacity   = '0';
-        lines[2].style.transform = 'rotate(45deg) translate(-5px, -6px)';
-      } else {
-        lines[0].style.transform = 'none';
-        lines[1].style.opacity   = '1';
-        lines[2].style.transform = 'none';
-      }
-    });
-
-    navLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-        const lines = hamburger.querySelectorAll('span');
-        lines.forEach(l => l.style.transform = 'none');
-        lines[1].style.opacity = '1';
-      });
-    });
+  const questions = [
+    { topic: 'GOVERNMENT 101', question: 'Who makes laws in Zambia?', answers: ['The Police', 'Parliament', 'The Courts', 'Local Councils'], correct: 1, detail: 'Correct! Parliament is responsible for making laws, following the constitutional process.' },
+    { topic: 'CIVIC BASICS', question: 'What is a constituency?', answers: ['A political party', 'An area represented by an MP', 'A court building', 'A type of election'], correct: 1, detail: 'Correct! Each constituency elects one MP to represent its people in the National Assembly.' },
+    { topic: 'YOUR RIGHTS', question: 'The Constitution is best described as…', answers: ['A list of politicians', 'A national rulebook', 'A school textbook', 'A voting card'], correct: 1, detail: 'Correct! The Constitution is the country's highest law and sets out how Zambia is governed.' },
+    { topic: 'CITIZENSHIP', question: 'What is citizenship?', answers: ['Being a member of a political party', 'Your legal relationship with your country', 'Having a job', 'Living in a city'], correct: 1, detail: 'Correct! Citizenship gives you rights and responsibilities as a member of Zambia.' },
+    { topic: 'HISTORY', question: 'When did Zambia gain independence?', answers: ['1950', 'October 24, 1964', 'January 1, 1965', '1975'], correct: 1, detail: 'Correct! Zambia gained independence on October 24, 1964, and this day is celebrated as Heroes Day.' },
+    { topic: 'RIGHTS & DUTIES', question: 'Which is a civic duty?', answers: ['Refusing to follow laws', 'Respecting others rights', 'Ignoring national events', 'Avoiding community service'], correct: 1, detail: 'Correct! Respecting others' rights is a core civic duty. Other duties include obeying laws and caring for public property.' },
+    { topic: 'GOVERNANCE', question: 'What is good governance?', answers: ['Leaders making all decisions alone', 'Transparent, accountable leadership', 'Ignoring citizens' input', 'Using power without rules'], correct: 1, detail: 'Correct! Good governance means leaders are transparent, accountable, and respect the rule of law.' },
+    { topic: 'CIVIC BASICS', question: 'Who represents a ward?', answers: ['An MP', 'A councillor', 'A police officer', 'A teacher'], correct: 1, detail: 'Correct! A councillor is elected to represent a ward and help make decisions about local services.' }
+  ];
+  let current = 0; let score = 0; let answered = false;
+  const count = document.querySelector('.question-count'); const progress = document.querySelector('.progress i'); const topic = document.querySelector('.quiz-topic'); const question = document.querySelector('.quiz-question'); const answers = document.querySelector('.answers'); const feedback = document.querySelector('.feedback'); const next = document.querySelector('.next-question');
+  function renderQuestion() {
+    const item = questions[current]; answered = false; count.textContent = `${current + 1} / ${questions.length}`; progress.style.width = `${((current + 1) / questions.length) * 100}%`; topic.textContent = item.topic; question.textContent = item.question; feedback.textContent = ''; feedback.className = 'feedback'; next.hidden = true;
+    answers.innerHTML = item.answers.map((answer, i) => `<button class="answer" data-index="${i}"><b>${String.fromCharCode(65+i)}</b>${answer}</button>`).join('');
+    answers.querySelectorAll('.answer').forEach(button => button.addEventListener('click', () => selectAnswer(Number(button.dataset.index), button)));
   }
-
-  // --- Sticky Header scroll effect ---
-  const header = document.querySelector('.header-nav');
-  if (header) {
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 30) {
-        header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.12)';
-      } else {
-        header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.08)';
-      }
-    });
-  }
-
-  // --- Animated Counters ---
-  const statNumbers = document.querySelectorAll('.stat-number[data-target]');
-
-  function animateCounter(el) {
-    const target   = parseInt(el.getAttribute('data-target'), 10);
-    const duration = 1800;
-    const step     = Math.ceil(target / (duration / 16));
-    let current    = 0;
-
-    const timer = setInterval(() => {
-      current += step;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
-      el.textContent = current.toLocaleString() + (target >= 100 ? '+' : '');
-    }, 16);
-  }
-
-  if (statNumbers.length > 0) {
-    const counterObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.4 });
-
-    statNumbers.forEach(el => counterObserver.observe(el));
-  }
-
-  // --- Events Filtering Logic ---
-  const filterButtons = document.querySelectorAll('.filter-btn');
-  const eventItems    = document.querySelectorAll('.event-item');
-
-  if (filterButtons.length > 0 && eventItems.length > 0) {
-    filterButtons.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filterValue = btn.getAttribute('data-filter');
-
-        eventItems.forEach(item => {
-          const itemType = item.getAttribute('data-type');
-          if (filterValue === 'all' || itemType === filterValue) {
-            item.style.display = 'flex';
-            item.style.opacity = '0';
-            setTimeout(() => {
-              item.style.opacity    = '1';
-              item.style.transition = 'opacity 0.35s ease';
-            }, 40);
-          } else {
-            item.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-
-  // --- Contact Form Modal ---
-  const contactForm   = document.getElementById('contactForm');
-  const modal         = document.getElementById('successModal');
-  const closeModalBtn = document.getElementById('closeModal');
-
-  if (contactForm && modal) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name    = document.getElementById('formName').value.trim();
-      const email   = document.getElementById('formEmail').value.trim();
-      const subject = document.getElementById('formSubject').value.trim();
-      const message = document.getElementById('formMessage').value.trim();
-
-      if (name && email && subject && message) {
-        modal.classList.add('active');
-        contactForm.reset();
-      }
-    });
-  }
-
-  if (closeModalBtn && modal) {
-    closeModalBtn.addEventListener('click', () => modal.classList.remove('active'));
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('active');
-    });
-  }
-
-  // --- Scroll Animation (fade-in cards) ---
-  const observerOpts = { root: null, rootMargin: '0px', threshold: 0.1 };
-
-  const scrollObserver = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity   = '1';
-        entry.target.style.transform = 'translateY(0)';
-        obs.unobserve(entry.target);
-      }
-    });
-  }, observerOpts);
-
-  const scrollEls = document.querySelectorAll(
-    '.overview-card, .timeline-content, .event-item, .branch-card, .leader-card'
-  );
-  scrollEls.forEach(el => {
-    el.style.opacity    = '0';
-    el.style.transform  = 'translateY(22px)';
-    el.style.transition = 'opacity 0.55s cubic-bezier(0.4,0,0.2,1), transform 0.55s cubic-bezier(0.4,0,0.2,1)';
-    scrollObserver.observe(el);
-  });
-
+  function selectAnswer(index, button) { if (answered) return; answered = true; const item = questions[current]; const buttons = answers.querySelectorAll('.answer'); buttons[item.correct].classList.add('correct'); if (index === item.correct) { score++; feedback.textContent = item.detail; feedback.className = 'feedback correct'; } else { button.classList.add('wrong'); feedback.textContent = `Not quite. ${item.detail}`; feedback.className = 'feedback wrong'; } next.hidden = false; next.innerHTML = current === questions.length - 1 ? `See my score <span>→</span>` : `Next question <span>→</span>`; }
+  next?.addEventListener('click', () => { if (current < questions.length - 1) { current++; renderQuestion(); } else { topic.textContent = 'QUIZ COMPLETE'; question.innerHTML = `You scored <em>${score} / ${questions.length}</em>. Keep growing!`; answers.innerHTML = ''; feedback.textContent = score === questions.length ? 'Excellent work — you know your civic basics.' : 'Every question is a chance to learn something useful.'; feedback.className = 'feedback correct'; next.hidden = true; progress.style.width = '100%'; } });
+  document.querySelector('.quiz-close')?.addEventListener('click', () => { current = 0; score = 0; renderQuestion(); });
+  if (count && progress && topic && question && answers && feedback && next) renderQuestion();
 });

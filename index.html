@@ -1,184 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Zambia Tong-Il Moo-Do Federation</title>
-  <meta name="description" content="Welcome to the Zambia Tong-Il Moo-Do Federation. Discover our dojos, events, leadership, and how to join the national Tong-Il Moo-Do family.">
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="icon" href="assets/new logo.jpeg" type="image/jpeg">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Simple, non-partisan civic education for young Zambians." />
+  <title>ZedCivic — Know. Question. Participate.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="index.css" />
 </head>
 <body>
-
-  <!-- ===== SITE HEADER — Centered Logo ===== -->
-  <div class="site-header-top">
-    <a href="index.html" class="site-logo-centered">
-      <img src="assets/new logo.jpeg" alt="ZMTIMDF Logo">
-      <span class="site-logo-title">Zambia Tong-Il Moo-Do Federation</span>
-      <span class="site-logo-sub">Affiliated to the World Tong-Il Moo-Do Federation</span>
-      </a>
-  </div>
-
-  <!-- ===== PRIMARY NAV BAR ===== -->
-
-  <header class="header-nav">
-    <div class="container nav-container">
-      <nav class="nav-menu" id="navMenu">
-        <a href="index.html" class="nav-link active">Home</a>
-        <a href="about.html" class="nav-link">About ZMTIMDF</a>
-        <a href="branches.html" class="nav-link">Branches &amp; Dojos</a>
-        <a href="events.html" class="nav-link">Events Calendar</a>
-        <a href="gallery.html" class="nav-link">Gallery</a>
-        <a href="contact.html" class="nav-link">Contact Us</a>
-      </nav>
-      <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
+  <div class="announcement"><span>✦</span> CIVIC EDUCATION, MADE CLEAR <span class="announcement-dot">•</span> FOR YOUNG ZAMBIANS</div>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="ZedCivic home"><span class="brand-mark">Z</span><span>Zed<span class="brand-accent">Civic</span></span></a>
+    <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span></button>
+    <nav class="main-nav" aria-label="Main navigation"><a href="topics.html">Topics</a><a href="quizzes.html">Quizzes</a><a href="explain.html">Explain it simply</a><a href="about.html">About</a></nav>
+    <a class="header-cta" href="quizzes.html">Take a quiz <span>↗</span></a>
   </header>
-
-  <!-- ===== HOMEPAGE HERO ===== -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="badge">Welcome</span>
-        <h1>United in Discipline, Strength, and Community</h1>
-        <p class="hero-description">ZMTIMDF brings the art, science, and values of Tong-Il Moo-Do to Zambia through accredited dojos, national events, and youth development programs.</p>
-        <div class="hero-cta">
-          <a href="about.html" class="btn btn-primary">Explore the Federation</a>
-          <a href="branches.html" class="btn btn-secondary">Find a Dojo</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== STATISTICS ===== -->
-  <section class="stats-section">
-    <div class="container stats-grid">
-      <div class="stat-item">
-        <span class="stat-number" data-target="420">0</span>
-        <span class="stat-label">Active Members</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="14">0</span>
-        <span class="stat-label">Accredited Dojos</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="85">0</span>
-        <span class="stat-label">National Events</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-number" data-target="12">0</span>
-        <span class="stat-label">Certified Instructors</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== OUR FOCUS ===== -->
-  <section class="overview">
-    <div class="container">
-      <div class="section-header">
-        <span class="badge">What We Do</span>
-        <h2>Building Strong Bodies and Stronger Communities</h2>
-        <p>From school programs to national gradings, our federation supports martial arts training that strengthens confidence, respect, and teamwork across Zambia.</p>
-      </div>
-      <div class="overview-grid">
-        <div class="overview-card">
-          <div class="card-icon"><i class="fa-solid fa-dumbbell"></i></div>
-          <h3>Training Excellence</h3>
-          <p>Our curriculum blends traditional Tong-Il Moo-Do techniques with modern training methods to develop every student’s physical and mental capacity.</p>
-        </div>
-        <div class="overview-card">
-          <div class="card-icon"><i class="fa-solid fa-handshake-simple"></i></div>
-          <h3>Community Impact</h3>
-          <p>We partner with schools, youth centers, and community groups to promote self-discipline, character development, and safe self-defense.</p>
-        </div>
-        <div class="overview-card">
-          <div class="card-icon"><i class="fa-solid fa-trophy"></i></div>
-          <h3>National Programs</h3>
-          <p>The federation hosts grading exams, referee training, and championship events that keep Zambia connected to the global Tong-Il Moo-Do family.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== CHAMPIONSHIP SPOTLIGHT ===== -->
-  <section class="championship">
-    <div class="container championship-grid">
-      <div class="championship-banner">
-        <div class="championship-overlay">
-          <span class="championship-tag">Upcoming Event</span>
-        </div>
-      </div>
-      <div class="championship-info">
-        <h2>Prepare for the Next National Championship</h2>
-        <p class="desc">ZMTIMDF equips athletes and instructors with the skills, rules, and confidence needed for Zambia’s premier Tong-Il Moo-Do championship season.</p>
-        <div class="championship-stats">
-          <div class="champ-stat-box">
-            <span class="num">5</span>
-            <span class="lbl">Event Regions</span>
-          </div>
-          <div class="champ-stat-box">
-            <span class="num">250+</span>
-            <span class="lbl">Male &amp; Female Competitors</span>
-          </div>
-          <div class="champ-stat-box">
-            <span class="num">8</span>
-            <span class="lbl">Referee Courses</span>
-          </div>
-        </div>
-        <a href="events.html" class="btn btn-primary">View Event Schedule</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <div class="container footer-grid">
-      <div class="footer-info">
-        <div class="footer-info-logo">
-          <img src="assets/new logo.jpeg" alt="ZMTIMDF Logo">
-          <span>ZMTIMDF</span>
-        </div>
-        <p>The official governing body for Tong-Il Moo-Do martial arts in Zambia, affiliated to the World Tong-Il Moo-Do Federation.</p>
-        <div class="footer-socials">
-          <a href="https://www.facebook.com/zmtimdf?mibextid=rS40aB7S9Ucbxw6v" target="_blank" class="social-icon" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-icon" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" class="social-icon" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Explore</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="about.html">About Us</a></li>
-          <li><a href="branches.html">Dojos &amp; Branches</a></li>
-          <li><a href="events.html">Events &amp; Seminars</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Affiliation</h4>
-        <ul>
-          <li><a href="branches.html">Join a Dojo</a></li>
-          <li><a href="branches.html">Instructor Accreditation</a></li>
-          <li><a href="about.html">Executive Committee</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact HQ</h4>
-        <ul class="footer-contact-list">
-          <li><i class="fa-solid fa-location-dot"></i><span>Lusaka Sports Development Complex,<br>P.O. Box 32011, Lusaka, Zambia</span></li>
-          <li><i class="fa-solid fa-phone"></i><span>+260 977 123456</span></li>
-          <li><i class="fa-solid fa-envelope"></i><span>info@tongilmoodozambia.org</span></li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <p>&copy; 2026 Zambia Tong-Il Moo-Do Federation. All Rights Reserved.</p>
-    </div>
-  </footer>
-
+  <main id="top">
+    <section class="hero">
+        <div class="hero-copy"><div class="eyebrow"><span class="eyebrow-line"></span> ZAMBIA, EXPLAINED</div><h1>Understand Zambia.<br><em>Make your voice</em><br>count.</h1><p>Simple, practical explainers on government, politics, elections and your rights — made for young Zambians.</p><div class="hero-actions"><a href="topics.html" class="button button-dark">Explore civic topics <span>→</span></a><a href="quizzes.html" class="text-link">Take a quiz <span>↓</span></a></div></div>
+      <div class="hero-art" aria-hidden="true"><div class="sun"></div><div class="hero-rings"><span></span><span></span><span></span></div><div class="speech speech-one">Your country.<br><strong>Your say.</strong></div><div class="speech speech-two">Know your <strong>rights</strong> ✦</div><div class="civic-card card-a"><span>01</span><b>Learn</b><i>↗</i></div><div class="civic-card card-b"><span>02</span><b>Question</b><i>?</i></div><div class="civic-card card-c"><span>03</span><b>Participate</b><i>✦</i></div><div class="raised-hand">☝</div><div class="zambia-map">Z<span>m</span></div></div>
+      <div class="hero-stamp"><span>●</span> MADE IN ZAMBIA <span>●</span></div>
+    </section>
+    <section class="intro-strip" id="about"><p>Politics doesn't have to be confusing.</p><span></span><p>ZedCivic breaks it down.</p><b>↘</b></section>
+    <section class="topics section" id="topics">
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> START EXPLORING</div><h2>Big topics.<br><em>Plain language.</em></h2></div><p>Tap a topic and learn the essentials in a few minutes. No jargon. No lectures.</p></div>
+      <div class="topic-grid">
+        <a href="#simple" class="topic-card yellow"><span class="topic-number">01</span><span class="topic-icon ballot">☑</span><h3>Elections</h3><p>How voting works, who can vote and why it matters.</p><span class="card-arrow">↗</span></a>
+        <a href="#simple" class="topic-card pink"><span class="topic-number">02</span><span class="topic-icon building">▥</span><h3>Government</h3><p>Who does what — from State House to your ward.</p><span class="card-arrow">↗</span></a>
+        <a href="#simple" class="topic-card green"><span class="topic-number">03</span><span class="topic-icon scale">⚖</span><h3>Your rights</h3><p>The freedoms and protections you have as a citizen.</p><span class="card-arrow">↗</span></a>
+        <a href="#simple" class="topic-card purple"><span class="topic-number">04</span><span class="topic-icon scroll">§</span><h3>Constitution</h3><p>The country's rulebook, explained without the legalese.</p><span class="card-arrow">↗</span></a>
+        <a href="#simple" class="topic-card orange"><span class="topic-number">05</span><span class="topic-icon money">K</span><h3>Public money</h3><p>Where public money comes from and where it goes.</p><span class="card-arrow">↗</span></a>
+        <a href="#simple" class="topic-card blue"><span class="topic-number">06</span><span class="topic-icon people">♧</span><h3>Youth voice</h3><p>Everyday ways to take part and be heard.</p><span class="card-arrow">↗</span></a>
+      </div><a href="#simple" class="all-topics">See all civic topics <span>→</span></a>
+    </section>
+    <section class="feature-explainer" id="simple"><div class="feature-label">TOPIC OF THE WEEK <span>✦</span></div><div class="explainer-copy"><p class="large-label">CIVIC BASICS / 04 MIN READ</p><h2>What does<br>an <em>MP</em> actually do?</h2><p>An MP is your voice in the National Assembly. But their work goes way beyond making speeches.</p><a class="button button-light" href="#quiz">Learn in 4 minutes <span>→</span></a></div><div class="explainer-board"><div class="paper-pin"></div><div class="question-mark">?</div><div class="board-lines"></div><p>YOUR MP<br><small>REPRESENTS</small><br>YOUR AREA</p><span class="scribble">Not a<br>boss!</span><div class="board-people"><i></i><i></i><i></i></div></div></section>
+    <section class="search-section"><div class="search-copy"><div class="eyebrow"><span class="eyebrow-line"></span> NO QUESTION IS TOO SMALL</div><h2>Explain it<br><em>simply.</em></h2><p>Type in something you've heard and we'll unpack it in plain English.</p></div><div class="search-panel"><label for="explainer-search">What do you want to understand?</label><div class="search-box"><span>⌕</span><input id="explainer-search" type="search" placeholder="e.g. What is a constituency?" /><button aria-label="Search">→</button></div><div class="quick-searches"><span>TRY:</span><button>What is democracy?</button><button>What is citizenship?</button><button>What is good governance?</button><button>When did Zambia gain independence?</button></div><p class="search-result" aria-live="polite"></p></div></section>
+    <section class="quiz-section section" id="quiz"><div class="quiz-intro"><div class="quiz-sticker">POP<br>QUIZ! <span>✦</span></div><div><div class="eyebrow"><span class="eyebrow-line"></span> PUT YOURSELF TO THE TEST</div><h2>Think you<br><em>know Zambia?</em></h2></div><p>Quick questions. Instant answers. A little more confidence every time.</p></div><div class="quiz-card"><div class="quiz-card-head"><span>QUESTION <b class="question-count">1 / 8</b></span><div class="progress"><i></i></div><button class="quiz-close" aria-label="Reset quiz">↻</button></div><div class="quiz-content"><p class="quiz-topic">GOVERNMENT 101</p><h3 class="quiz-question">Who makes laws in Zambia?</h3><div class="answers"></div><div class="feedback" aria-live="polite"></div><button class="next-question" hidden>Next question <span>→</span></button></div></div></section>
+    <section class="neutral-section"><div class="neutral-icon">◉</div><div><div class="eyebrow"><span class="eyebrow-line"></span> CIVIC, NOT PARTISAN</div><h2>Facts first.<br><em>Always.</em></h2></div><p>ZedCivic is for learning, not taking sides. We explain what is happening, what it means, and what citizens should know.</p><a href="#about" class="text-link">How we stay neutral <span>→</span></a></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#top"><span class="brand-mark">Z</span><span>Zed<span class="brand-accent">Civic</span></span></a><p>Know. Question. Participate.</p><p class="footer-note">A civic learning space for young Zambians.</p><a href="#top">Back to top ↑</a></footer>
   <script src="main.js"></script>
-</body>
-</html>
+</body></html>
